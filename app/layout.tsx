@@ -1,3 +1,4 @@
+import Script from "next/script"
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -20,6 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
+        <Script
+          src="https://linguachatbotapi.netlify.app/chatbot.js"
+          strategy="afterInteractive"
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true} disableTransitionOnChange={false}>
           {children}
         </ThemeProvider>
